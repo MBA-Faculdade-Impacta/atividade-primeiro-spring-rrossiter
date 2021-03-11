@@ -20,9 +20,9 @@ public class ProdutoController {
 	//http://localhost:8080/produtos
 	public static List<Produto> bancoDeDados = new ArrayList<>();
 	
-	@PostMapping("")
-	public ResponseEntity<Produto> criarProduto(@RequestBody Produto produto) {
-		bancoDeDados.add(produto);
+	@PostMapping("lotes")
+	public ResponseEntity<List<Produto>> criarProduto(@RequestBody List<Produto> produto) {
+		bancoDeDados.addAll(produto);
 		
 		return ResponseEntity.ok(produto);
 	}
